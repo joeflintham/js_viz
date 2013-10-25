@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <script type="text/javascript" src="js/_.js"></script>
+    <script type="text/javascript" src="js/jq.js"></script>
+    <script type="text/javascript" src="js/d3.js"></script>
+    <script type="text/javascript" src="js/chord.js"></script>
+
+    <script type="text/template" id="metadatatitle">
+      <div id="sector"><h2><%=title %>: <%=count %></h2></div>
+    </script>
+
+    <script type="text/template" id="metadatapanel">
+      <div id="segment" data-segment="<%=seg_code %>" class="<%=seg_code %>"><span class="key"><a href="#"  class="segment_trigger"></a></span><span><a href="#" class="segment_link segment_trigger"><%=segment_name %></a></span><span><%=count %> (<%=percent %>)</span></div>
+    </script>
+
+    <script type="text/template" id="dataloader">
+      <div class="refresh"><p><a href="#" data-file="<%=chordfile %>"><%=handle %></a></p></div>
+    </script>
+
+    <title>Jobsite Data Viz</title>
+  </head>
+  
+  <style>
+    
+    body {
+    font: 1em sans-serif;
+    }
+    
+    svg text {
+    font-size: 10px;
+    }
+
+    .chord path {
+    fill-opacity: 0.6;
+    stroke: #000;
+    stroke-width: .5px;
+    }
+    
+    #chart, #metadata {
+    float: left;
+    padding: 10px;
+    }
+
+    #menu div.refresh {
+    display: inline-block;
+    width: 150px;
+    padding: 0px;
+    }
+
+    #menu div.refresh a{
+    display: block;
+    background: 
+    }
+
+    #menu p a {
+    display: block;
+    margin: 10px;
+    color: #000;
+    font-weight: bold;
+    background: #cdefff;
+    padding: 10px;
+    white-space: nowrap;
+    }
+    
+    #segment.selected {
+    font-weight: bold;
+    }
+    
+    #segment span {
+    min-width: 250px;
+    display: inline-block;
+    }
+
+    #segment span.key {
+    margin: 5px 5px;
+    min-width: 40px;
+    height: 40px;
+    float: left;
+    }
+
+    #segment span.key a {
+    width: 40px;
+    height: 40px;
+    display: block;
+    }
+
+    a.segment_link {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px 5px;
+    color: #000;
+    }
+
+  </style>
+  <body>
+
+    <h1>Candidate sector destination</h1>
+
+    <div id="menu">
+    </div>
+
+    <div id="chart"></div>
+
+    <div id="metadata">
+      <div id="title"></div>
+      <div id="meta"></div>
+    </div>
+  </body>
+  
+</html>

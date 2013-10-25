@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <title>Jobsite Data Viz</title>
+  </head>
+  
+  <style>
+    
+    body {
+    font: 1em sans-serif;
+    }
+
+  </style>
+  <body>
+
+    <h1>Jobsite Data Viz</h1>
+    <h2>Candidate sector destinations</h2>
+    <p>Visualisations of the relationship between the sectors that candidates use to self-categorise when they sign-up, and the sectors in which they actually apply for jobs.
+    <h3>Quick links</h3>
+
+      <ul>
+	<li><a href="chord.html">Chord diagrams</a></li>
+	<li><a href="tree.html">Treemaps</a></li>
+      </ul>
+
+      <h2>Documentation</h2>
+
+      <h3>Requirements (display)</h3>
+      <ul>
+	<li>jQuery (DOM selection)</li>
+	<li>Underscore (template rendering)</li>
+	<li>d3 (visualisation library)</li>
+      </ul>
+      
+      <h3>Requirements (data processing)</h3>
+      <ul>
+	<li>Python</li>
+      </ul>
+      
+      <h3>Adding new datasets</h3>
+      <p>You can add news datasets in two steps:</p>
+      <ol>
+	<li>Export a matrix to csv: in your spreadsheet software, save the active worksheet as a Windows Comma Separated Values (.csv) file; save the .csv file in /Library/Webserver/Documents/dataviz/csv/data</li>
+	<li>Run the data processor: in a terminal, navigate to the dataviz folder:<br />
+	  <pre>cd /Library/Webserver/Documents/dataviz</pre><br />
+	  Then run the data processor script:
+	  <pre>python process_data.py</pre><br />
+	</li>
+      </ol>
+
+      <h3>Notes</h3>
+      <p>Spreadsheet format: the processor script requires that the matrix in the csv conform to a specific layout. Open <a href="Application_sector.xlsx">this example spreadhseet</a> for reference.</p>
+      <p>Sector names: the processor bundles in Sector names using the csv/index/index.csv file. If you want include sector names which are missing from this index, add them to the index in the spreadsheet <a href="Application_sector.xlsx">(see the example for reference)</a> and save it as Windows Comma Separated Values file 'index.csv' in csv/index/</p>
+
+
+  </body>
+  
+</html>
